@@ -16,7 +16,7 @@ final class TypesUnitValidator implements IStringConverter<TypesUnit>, IParamete
         try {
             TypesUnit.valueOf(value);
         } catch (IllegalArgumentException ex) {
-            throw new ParameterException("Parameter " + name + " must be one of :  " + Arrays.toString(SizeUnit.values()));
+            throw new ParameterException("Parameter " + name + " must be one of :  " + Arrays.toString(TypesUnit.values()));
         }
     }
 

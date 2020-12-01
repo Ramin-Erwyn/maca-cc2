@@ -1,5 +1,5 @@
 #EXERCICE 2
-
+J'ai recontrer un probleme de Jcommandeur j'ai donc fais des screens (voir image) et explication en bas 
 1er etape: C'EST UN TEST 
 
 pour commencer j'ai crée un type avec une commande types -it pour tester 
@@ -22,3 +22,6 @@ on obtien : ce n'est pas tout le contenue btw
  
 2 eme etape TYPE 
 
+J'ai dupliqué les packages size pour faire des packages Types mais j'ai une problème de jCommender 
+Mais c'est le meme principe que pour la commande size mais on remplace par types 
+ 

@@ -7,4 +7,5 @@ public interface SizeParams extends CommonParams {
      boolean isFilesOnly();
      boolean isIncludeDirectories();
      boolean isTypes();
+     boolean isSize();
 }

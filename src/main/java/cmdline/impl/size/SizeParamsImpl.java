@@ -31,6 +31,8 @@ final class SizeParamsImpl implements SizeParams {
 
     @Parameter(names = {"-it", "--types"}, description = "affiche le type")
     protected boolean istypes = false;
+    protected boolean isSize = false;
+
 
     @Override
     public List<Path> getPaths() {
@@ -65,5 +67,10 @@ final class SizeParamsImpl implements SizeParams {
     @Override
     public boolean isTypes() {
         return istypes;
+    }
+
+    @Override
+    public boolean isSize() {
+        return isSize;
     }
 }
