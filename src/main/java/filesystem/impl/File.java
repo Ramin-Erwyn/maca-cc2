@@ -11,6 +11,7 @@ import java.util.Objects;
 public final class File extends ComponentImpl implements Component {
 
     private final List<String> content;
+    private long types;
 
     protected File(java.io.File wrapped) {
         super(wrapped);
@@ -30,6 +31,11 @@ public final class File extends ComponentImpl implements Component {
     @Override
     public Composite<Component> asComposite() {
         return null;
+    }
+
+    @Override
+    public long getTypes() {
+        return this.types;
     }
 
 

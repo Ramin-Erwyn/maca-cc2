@@ -1,6 +1,7 @@
 package visitors.impl.size;
 
 import cmdline.impl.common.SizeUnit;
+import cmdline.impl.common.TypesUnit;
 import visitors.api.SizeVisitorBuilder;
 import visitors.api.Visitor;
 import visitors.api.VisitorBuilder;
@@ -35,7 +36,19 @@ final class SizeVisitorBuilderImpl implements SizeVisitorBuilder {
     }
 
     @Override
+    public SizeVisitorBuilder setIsTypes(boolean option) {
+        visitor.setIsTypes(option);
+        return this;
+    }
+
+    @Override
     public Visitor build() {
         return visitor;
+    }
+
+    @Override
+    public void setTypesUnit(TypesUnit typesUnit) {
+        visitor.setTypesUnit(typesUnit);
+        return ;
     }
 }

@@ -18,6 +18,7 @@ final class SizeVisitorBuilderDirector implements VisitorBuilderDirector<SizePar
     public SizeVisitorBuilderDirector buildVisitor(SizeParams params) {
         builder.setIncludeFilesOnly(params.isFilesOnly())
                 .setIncludeDirectories(params.isIncludeDirectories())
+                .setIsTypes(params.isTypes())
                 .setSizeUnit(params.getSizeUnit());
         return this;
     }

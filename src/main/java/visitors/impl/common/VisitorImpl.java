@@ -1,6 +1,7 @@
 package visitors.impl.common;
 
 import cmdline.impl.common.SizeUnit;
+import cmdline.impl.common.TypesUnit;
 import visitors.api.Visitor;
 
 /**
@@ -18,13 +19,20 @@ public abstract class VisitorImpl implements Visitor {
     protected String unitStr;
 
     protected SizeUnit sizeUnit;
+    private TypesUnit typesUnit;
 
     public VisitorImpl() {
+
         this.sizeUnit = SizeUnit.BYTES;
+        this.typesUnit = TypesUnit.BYTES;
     }
 
     public void setSizeUnit(SizeUnit sizeUnit) {
         this.sizeUnit = sizeUnit;
+        this.unitStr = LEFT_PAR + sizeUnit + RIGHT_PAR;
+    }
+    public void setTypesUnit(TypesUnit typesUnit) {
+        this.typesUnit = typesUnit;
         this.unitStr = LEFT_PAR + sizeUnit + RIGHT_PAR;
     }
 }

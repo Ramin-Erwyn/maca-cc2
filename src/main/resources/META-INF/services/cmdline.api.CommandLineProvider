@@ -1,1 +1,2 @@
 cmdline.impl.size.SizeProvider
+cmdline.impl.types.TypesProvider

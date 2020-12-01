@@ -17,12 +17,17 @@ final class SizeVisitor extends VisitorImpl {
 
     public static final String SIZE = "Size";
     public static final String NAME = "Name";
+    public static final String CONTENT = "Content";
+    public static final String NB = "NB";
+
 
     private final CommandLineTable cmdLineTable;
     private final Map<Path, Long> dirSize;
     private long totalSize;
     private boolean includeFilesOnly;
     private boolean includeDirectories;
+    private boolean withTypes;
+
 
     SizeVisitor() {
         super();
@@ -63,11 +68,10 @@ final class SizeVisitor extends VisitorImpl {
     public void print() {
         initCmdLineTableHeaders();
         cmdLineTable.setShowVerticalLines(true);
-        cmdLineTable.addFinalRow(TOTAL + WS + unitStr,
+        cmdLineTable.addFinalRow((withTypes?">>":"**") + TOTAL + WS + unitStr,
                 formatSize(translateSizeInUnit(totalSize, sizeUnit)));
         cmdLineTable.print();
     }
-
     void setIncludeFilesOnly(boolean includeFilesOnly) {
         this.includeFilesOnly = includeFilesOnly;
     }
@@ -76,8 +80,12 @@ final class SizeVisitor extends VisitorImpl {
         this.includeDirectories = includeDirectories;
     }
 
+    void setIsTypes(boolean withTypes) {
+        this.withTypes = withTypes;
+    }
+
     private void initCmdLineTableHeaders() {
-        cmdLineTable.setHeaders(NAME, SIZE + WS + unitStr);
+        cmdLineTable.setHeaders(CONTENT,SIZE + WS + unitStr);
     }
 
     private void checkIncludeDirSize(long size) {

@@ -21,4 +21,5 @@ public interface Component extends Visitable, PathComponent {
     boolean isFile();
     MediaType getContentType();
     Composite<Component> asComposite();
+    long getTypes();
 }

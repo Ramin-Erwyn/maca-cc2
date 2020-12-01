@@ -6,4 +6,5 @@ package cmdline.api;
 public interface SizeParams extends CommonParams {
      boolean isFilesOnly();
      boolean isIncludeDirectories();
+     boolean isTypes();
 }

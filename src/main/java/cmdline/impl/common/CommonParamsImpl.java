@@ -31,6 +31,11 @@ public final class CommonParamsImpl implements CommonParams {
     }
 
     @Override
+    public TypesUnit getTypesUnit() {
+        return unitParam.getTypesUnit();
+    }
+
+    @Override
     public boolean isHelp() {
         return baseParams.isHelp();
     }

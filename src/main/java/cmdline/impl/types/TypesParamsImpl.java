@@ -1,7 +1,7 @@
-package cmdline.impl.size;
+package cmdline.impl.types;
 
 import cmdline.api.CommonParams;
-import cmdline.api.SizeParams;
+import cmdline.api.TypesParams;
 import cmdline.impl.common.CommonParamsImpl;
 import cmdline.impl.common.SizeUnit;
 import cmdline.impl.common.TypesUnit;
@@ -12,24 +12,24 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * Defines specific parameters for size command line.
+ * Defines specific parameters for type command line.
  * Reuses {@link CommonParamsImpl}
  */
-final class SizeParamsImpl implements SizeParams {
+final class TypesParamsImpl implements TypesParams {
 
     @ParametersDelegate
     private final CommonParams commonParams = new CommonParamsImpl();
 
-    @Parameter(names = {"-fs", "--include-files"}, description = "include files sizes only in total, " +
+    @Parameter(names = {"-fs", "--include-files"}, description = "include files types only in total, " +
             "showing each directory total as contained files or subdirectories' total." +
-            " This implies that en empty directory's size is 0")
+            " This implies that en empty directory's types is 0")
     protected boolean filesOnly = false;
 
-    @Parameter(names = {"-ds", "--include-directories"}, description = "include directories sizes also in total, " +
-            "showing each directory own's size")
+    @Parameter(names = {"-ds", "--include-directories"}, description = "include directories Types also in total, " +
+            "showing each directory own's types")
     protected boolean includeDirectories = false;
 
-    @Parameter(names = {"-it", "--types"}, description = "affiche le type")
+    @Parameter(names = {"-f", "--types"}, description = "affiche le type")
     protected boolean istypes = false;
 
     @Override

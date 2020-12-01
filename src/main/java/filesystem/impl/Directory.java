@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class Directory extends ComponentImpl implements Component, Composite<Component> {
     private final List<Component> children;
-
+  private long types;
     protected Directory(java.io.File wrapped) {
         super(wrapped);
         children = new ArrayList<>();
@@ -21,6 +21,9 @@ public class Directory extends ComponentImpl implements Component, Composite<Com
     public Composite<Component> asComposite() {
         return this;
     }
+
+    @Override
+    public long getTypes() {  return this.types; }
 
     @Override
     public List<Component> getChildren() {
